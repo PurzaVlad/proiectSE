@@ -7,17 +7,21 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="background-decoration"></div>
   <main class="container">
-    <header>
-      <h1>Sistem Expert pentru Alegerea Sportului Potrivit</h1>
-      <p>Completeaza formularul, iar motorul de scorare pe bias iti recomanda sporturile cele mai potrivite.</p>
+    <header class="hero">
+      <div class="hero-badge">🏃 Sistem Expert</div>
+      <h1>Alegerea Sportului Potrivit</h1>
+      <p>Completeaza formularul și descoperă sportul perfect pentru tine. Motorul expert iti recomanda cele mai potrivite activități.</p>
     </header>
 
-    <section class="card">
+    <section class="card form-card">
+      <h2 class="form-title">📋 Completează Profilul Tău</h2>
       <form id="expertForm">
         <div class="grid">
-          <label>
-            Nivel activitate fizica curent
+          <label class="form-group">
+            <span class="label-icon">💪</span>
+            <span class="label-text">Nivel activitate fizica</span>
             <select name="activityLevel" required>
               <option value="">Selecteaza</option>
               <option value="sedentary">Sedentar</option>
@@ -26,8 +30,9 @@
             </select>
           </label>
 
-          <label>
-            Nivel conditie fizica
+          <label class="form-group">
+            <span class="label-icon">⚡</span>
+            <span class="label-text">Nivel conditie fizica</span>
             <select name="fitnessLevel" required>
               <option value="">Selecteaza</option>
               <option value="beginner">Incepator</option>
@@ -36,8 +41,9 @@
             </select>
           </label>
 
-          <label>
-            Mediu preferat
+          <label class="form-group">
+            <span class="label-icon">🏠</span>
+            <span class="label-text">Mediu preferat</span>
             <select name="environment" required>
               <option value="">Selecteaza</option>
               <option value="indoor">Indoor</option>
@@ -45,8 +51,9 @@
             </select>
           </label>
 
-          <label>
-            Timp disponibil pe saptamana
+          <label class="form-group">
+            <span class="label-icon">⏱️</span>
+            <span class="label-text">Timp disponibil pe saptamana</span>
             <select name="time" required>
               <option value="">Selecteaza</option>
               <option value="low">Scazut (1-2 ore)</option>
@@ -55,8 +62,9 @@
             </select>
           </label>
 
-          <label>
-            Preferinta de practicare
+          <label class="form-group">
+            <span class="label-icon">👥</span>
+            <span class="label-text">Preferinta de practicare</span>
             <select name="style" required>
               <option value="">Selecteaza</option>
               <option value="individual">Individual</option>
@@ -64,8 +72,9 @@
             </select>
           </label>
 
-          <label>
-            Obiectiv principal
+          <label class="form-group">
+            <span class="label-icon">🎯</span>
+            <span class="label-text">Obiectiv principal</span>
             <select name="goal" required>
               <option value="">Selecteaza</option>
               <option value="weight_loss">Scadere in greutate</option>
@@ -76,8 +85,9 @@
             </select>
           </label>
 
-          <label>
-            Probleme articulare
+          <label class="form-group">
+            <span class="label-icon">🦴</span>
+            <span class="label-text">Probleme articulare</span>
             <select name="jointIssues" required>
               <option value="">Selecteaza</option>
               <option value="yes">Da</option>
@@ -85,8 +95,9 @@
             </select>
           </label>
 
-          <label>
-            Coordonare motrica
+          <label class="form-group">
+            <span class="label-icon">🧠</span>
+            <span class="label-text">Coordonare motrica</span>
             <select name="coordination" required>
               <option value="">Selecteaza</option>
               <option value="low">Scazuta</option>
@@ -96,25 +107,33 @@
         </div>
 
         <div class="actions">
-          <button type="submit">Genereaza recomandare</button>
-          <button type="reset" id="resetBtn" class="secondary">Reseteaza</button>
+          <button type="submit" class="btn-primary">✨ Genereaza Recomandare</button>
+          <button type="reset" id="resetBtn" class="btn-secondary">↻ Reseteaza</button>
         </div>
       </form>
     </section>
 
-    <section class="card hidden" id="resultCard">
-      <h2>Recomandare</h2>
-      <p id="mainRecommendation"></p>
-      <p id="sportDescription" class="muted"></p>
+    <section class="card result-card hidden" id="resultCard">
+      <div class="result-header">
+        <h2>🏆 Recomandare Personalizată</h2>
+        <p id="mainRecommendation" class="main-recommendation"></p>
+        <p id="sportDescription" class="sport-description"></p>
+      </div>
 
-      <h3>Criterii aplicate (Bias Scoring)</h3>
-      <ul id="appliedBiasList"></ul>
+      <div class="result-section">
+        <h3>✅ Criterii Aplicate</h3>
+        <ul id="appliedBiasList" class="criteria-list"></ul>
+      </div>
 
-      <h3>Explicatia inferentei</h3>
-      <ul id="reasonList"></ul>
+      <div class="result-section">
+        <h3>💡 De Ce?</h3>
+        <ul id="reasonList" class="reasons-list"></ul>
+      </div>
 
-      <h3>Top 5 sporturi recomandate (procent de potrivire)</h3>
-      <ol id="rankingList"></ol>
+      <div class="result-section">
+        <h3>🥇 Top 5 Sporturi Recomandate</h3>
+        <ol id="rankingList" class="ranking-list"></ol>
+      </div>
     </section>
   </main>
 
