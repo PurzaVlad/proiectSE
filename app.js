@@ -39,16 +39,7 @@ async function loadKnowledgeBase() {
 }
 
 function collectFacts(formData) {
-  return {
-    activityLevel: formData.get("activityLevel"),
-    fitnessLevel: formData.get("fitnessLevel"),
-    environment: formData.get("environment"),
-    time: formData.get("time"),
-    style: formData.get("style"),
-    goal: formData.get("goal"),
-    jointIssues: formData.get("jointIssues"),
-    coordination: formData.get("coordination")
-  };
+  return Object.fromEntries(formData.entries());
 }
 
 function initializeScores(sportsMeta, baseBias = {}) {

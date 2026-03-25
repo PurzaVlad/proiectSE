@@ -28,6 +28,46 @@
     "hiking": {
       "label": "Drumetii",
       "description": "Activitate outdoor moderata, utila pentru sanatate generala si reducerea stresului."
+    },
+    "basketball": {
+      "label": "Baschet",
+      "description": "Sport de echipa intens, potrivit pentru coordonare, viteza si socializare."
+    },
+    "volleyball": {
+      "label": "Volei",
+      "description": "Sport de echipa cu impact moderat, bun pentru reflexe si colaborare."
+    },
+    "yoga": {
+      "label": "Yoga",
+      "description": "Activitate cu impact redus, orientata spre mobilitate, postura si reducerea stresului."
+    },
+    "pilates": {
+      "label": "Pilates",
+      "description": "Antrenament controlat pentru stabilitate, forta de baza si postura."
+    },
+    "boxing": {
+      "label": "Box",
+      "description": "Sport intens ce dezvolta conditia fizica, reflexele si disciplina."
+    },
+    "martial_arts": {
+      "label": "Arte martiale",
+      "description": "Antrenament tehnic pentru autocontrol, coordonare si rezistenta."
+    },
+    "rowing": {
+      "label": "Canotaj",
+      "description": "Sport complet pentru rezistenta si forta, cu solicitare echilibrata."
+    },
+    "climbing": {
+      "label": "Escalada",
+      "description": "Sport tehnic pentru forta functionala, concentrare si coordonare avansata."
+    },
+    "table_tennis": {
+      "label": "Tenis de masa",
+      "description": "Sport accesibil indoor, excelent pentru reflexe si coordonare fina."
+    },
+    "badminton": {
+      "label": "Badminton",
+      "description": "Sport dinamic, potrivit pentru agilitate, anduranta si coordonare."
     }
   },
   "baseBias": {
@@ -37,7 +77,17 @@
     "football": 1,
     "tennis": 1,
     "fitness": 1,
-    "hiking": 1
+    "hiking": 1,
+    "basketball": 1,
+    "volleyball": 1,
+    "yoga": 1,
+    "pilates": 1,
+    "boxing": 1,
+    "martial_arts": 1,
+    "rowing": 1,
+    "climbing": 1,
+    "table_tennis": 1,
+    "badminton": 1
   },
   "criteria": {
     "activityLevel": {
@@ -49,9 +99,15 @@
             "fitness": 3,
             "swimming": 3,
             "hiking": 2,
+            "yoga": 3,
+            "pilates": 3,
+            "table_tennis": 2,
+            "volleyball": 1,
             "running": 1,
             "cycling": 1,
-            "tennis": 1
+            "tennis": 1,
+            "badminton": 1,
+            "rowing": 1
           }
         },
         "moderate": {
@@ -62,8 +118,18 @@
             "cycling": 2,
             "swimming": 2,
             "tennis": 2,
+            "volleyball": 2,
+            "table_tennis": 2,
+            "badminton": 2,
+            "rowing": 2,
+            "yoga": 2,
+            "pilates": 2,
             "running": 1,
-            "football": 1
+            "football": 1,
+            "basketball": 1,
+            "boxing": 1,
+            "martial_arts": 1,
+            "climbing": 1
           }
         },
         "active": {
@@ -72,10 +138,18 @@
             "running": 3,
             "football": 3,
             "cycling": 3,
+            "basketball": 3,
+            "boxing": 3,
+            "martial_arts": 3,
+            "climbing": 3,
+            "rowing": 3,
+            "badminton": 3,
             "tennis": 2,
             "swimming": 2,
             "fitness": 2,
-            "hiking": 1
+            "hiking": 1,
+            "volleyball": 2,
+            "table_tennis": 2
           }
         }
       }
@@ -89,8 +163,13 @@
             "fitness": 3,
             "swimming": 2,
             "hiking": 2,
+            "yoga": 3,
+            "pilates": 3,
+            "table_tennis": 2,
+            "volleyball": 1,
             "cycling": 1,
-            "running": 1
+            "running": 1,
+            "badminton": 1
           }
         },
         "intermediate": {
@@ -101,8 +180,18 @@
             "fitness": 2,
             "tennis": 2,
             "swimming": 2,
+            "basketball": 2,
+            "volleyball": 2,
+            "rowing": 2,
+            "badminton": 2,
+            "table_tennis": 2,
+            "martial_arts": 2,
+            "boxing": 2,
+            "yoga": 2,
+            "pilates": 2,
             "football": 1,
-            "hiking": 1
+            "hiking": 1,
+            "climbing": 1
           }
         },
         "advanced": {
@@ -111,10 +200,20 @@
             "running": 3,
             "football": 3,
             "tennis": 3,
+            "basketball": 3,
+            "boxing": 3,
+            "martial_arts": 3,
+            "climbing": 3,
             "cycling": 2,
             "swimming": 2,
+            "rowing": 2,
+            "badminton": 2,
+            "volleyball": 2,
+            "table_tennis": 2,
             "fitness": 1,
-            "hiking": 1
+            "hiking": 1,
+            "yoga": 1,
+            "pilates": 1
           }
         }
       }
@@ -127,7 +226,15 @@
           "bias": {
             "fitness": 3,
             "swimming": 3,
-            "tennis": 1
+            "tennis": 1,
+            "yoga": 3,
+            "pilates": 3,
+            "table_tennis": 3,
+            "boxing": 2,
+            "martial_arts": 2,
+            "volleyball": 2,
+            "badminton": 2,
+            "climbing": 1
           }
         },
         "outdoor": {
@@ -137,7 +244,12 @@
             "cycling": 3,
             "football": 3,
             "hiking": 3,
-            "tennis": 2
+            "tennis": 2,
+            "basketball": 3,
+            "rowing": 3,
+            "climbing": 3,
+            "badminton": 2,
+            "volleyball": 2
           }
         }
       }
@@ -151,8 +263,14 @@
             "fitness": 3,
             "running": 2,
             "swimming": 2,
+            "yoga": 3,
+            "pilates": 3,
+            "table_tennis": 2,
+            "boxing": 2,
+            "martial_arts": 2,
             "tennis": 1,
-            "hiking": 1
+            "hiking": 1,
+            "badminton": 1
           }
         },
         "medium": {
@@ -163,8 +281,18 @@
             "tennis": 2,
             "swimming": 2,
             "fitness": 2,
+            "basketball": 2,
+            "volleyball": 2,
+            "rowing": 2,
+            "badminton": 2,
+            "table_tennis": 2,
+            "yoga": 2,
+            "pilates": 2,
+            "boxing": 2,
+            "martial_arts": 2,
             "football": 1,
-            "running": 1
+            "running": 1,
+            "climbing": 1
           }
         },
         "high": {
@@ -176,6 +304,14 @@
             "swimming": 2,
             "tennis": 2,
             "hiking": 2,
+            "basketball": 3,
+            "boxing": 3,
+            "martial_arts": 3,
+            "climbing": 3,
+            "rowing": 3,
+            "badminton": 3,
+            "volleyball": 2,
+            "table_tennis": 2,
             "fitness": 1
           }
         }
@@ -192,15 +328,28 @@
             "cycling": 2,
             "tennis": 2,
             "fitness": 2,
-            "hiking": 2
+            "hiking": 2,
+            "yoga": 3,
+            "pilates": 3,
+            "boxing": 2,
+            "martial_arts": 2,
+            "rowing": 2,
+            "climbing": 2,
+            "table_tennis": 2,
+            "badminton": 2
           }
         },
         "team": {
           "label": "Echipa",
           "bias": {
             "football": 4,
+            "basketball": 4,
+            "volleyball": 4,
             "tennis": 1,
-            "fitness": 1
+            "fitness": 1,
+            "rowing": 2,
+            "badminton": 2,
+            "table_tennis": 1
           }
         }
       }
@@ -216,8 +365,18 @@
             "fitness": 3,
             "swimming": 2,
             "hiking": 2,
+            "boxing": 3,
+            "rowing": 3,
+            "basketball": 2,
+            "badminton": 2,
+            "yoga": 2,
+            "pilates": 2,
             "football": 1,
-            "tennis": 1
+            "tennis": 1,
+            "volleyball": 1,
+            "martial_arts": 1,
+            "climbing": 1,
+            "table_tennis": 1
           }
         },
         "endurance": {
@@ -228,8 +387,18 @@
             "swimming": 2,
             "football": 2,
             "hiking": 2,
+            "rowing": 3,
+            "boxing": 2,
+            "basketball": 2,
+            "badminton": 2,
+            "martial_arts": 2,
             "tennis": 1,
-            "fitness": 1
+            "fitness": 1,
+            "volleyball": 1,
+            "climbing": 1,
+            "table_tennis": 1,
+            "yoga": 1,
+            "pilates": 1
           }
         },
         "general_health": {
@@ -239,18 +408,33 @@
             "hiking": 3,
             "fitness": 2,
             "cycling": 2,
+            "yoga": 3,
+            "pilates": 3,
+            "rowing": 2,
+            "table_tennis": 2,
+            "badminton": 2,
             "running": 1,
             "tennis": 1,
-            "football": 1
+            "football": 1,
+            "volleyball": 1,
+            "basketball": 1,
+            "martial_arts": 1,
+            "climbing": 1,
+            "boxing": 1
           }
         },
         "social": {
           "label": "Socializare",
           "bias": {
             "football": 4,
+            "basketball": 4,
+            "volleyball": 4,
             "tennis": 2,
+            "badminton": 2,
+            "table_tennis": 2,
             "hiking": 1,
-            "fitness": 1
+            "fitness": 1,
+            "rowing": 2
           }
         },
         "stress_relief": {
@@ -260,8 +444,18 @@
             "swimming": 2,
             "running": 2,
             "fitness": 2,
+            "yoga": 3,
+            "pilates": 3,
+            "table_tennis": 2,
+            "badminton": 2,
+            "climbing": 2,
             "cycling": 1,
-            "tennis": 1
+            "tennis": 1,
+            "rowing": 1,
+            "boxing": 1,
+            "martial_arts": 1,
+            "volleyball": 1,
+            "basketball": 1
           }
         }
       }
@@ -274,7 +468,20 @@
           "bias": {
             "swimming": 4,
             "fitness": 2,
-            "hiking": 1
+            "hiking": 1,
+            "yoga": 4,
+            "pilates": 4,
+            "rowing": 2,
+            "table_tennis": 1,
+            "running": -2,
+            "football": -3,
+            "basketball": -2,
+            "volleyball": -1,
+            "tennis": -1,
+            "badminton": -1,
+            "boxing": -3,
+            "martial_arts": -3,
+            "climbing": -2
           }
         },
         "no": {
@@ -286,7 +493,17 @@
             "cycling": 2,
             "fitness": 1,
             "swimming": 1,
-            "hiking": 1
+            "hiking": 1,
+            "basketball": 2,
+            "volleyball": 2,
+            "boxing": 2,
+            "martial_arts": 2,
+            "climbing": 2,
+            "badminton": 2,
+            "rowing": 1,
+            "table_tennis": 1,
+            "yoga": 1,
+            "pilates": 1
           }
         }
       }
@@ -300,8 +517,12 @@
             "fitness": 2,
             "swimming": 2,
             "hiking": 2,
+            "yoga": 3,
+            "pilates": 3,
+            "rowing": 2,
             "running": 1,
-            "cycling": 1
+            "cycling": 1,
+            "volleyball": 1
           }
         },
         "high": {
@@ -313,7 +534,177 @@
             "running": 2,
             "swimming": 1,
             "fitness": 1,
-            "hiking": 1
+            "hiking": 1,
+            "basketball": 3,
+            "table_tennis": 3,
+            "badminton": 3,
+            "boxing": 3,
+            "martial_arts": 3,
+            "climbing": 3,
+            "volleyball": 2,
+            "rowing": 2,
+            "yoga": 1,
+            "pilates": 1
+          }
+        }
+      }
+    },
+    "budget": {
+      "label": "Buget disponibil",
+      "options": {
+        "low": {
+          "label": "Scazut",
+          "bias": {
+            "running": 3,
+            "football": 3,
+            "hiking": 3,
+            "fitness": 2,
+            "yoga": 2,
+            "basketball": 2,
+            "volleyball": 2,
+            "table_tennis": 3,
+            "badminton": 2,
+            "martial_arts": 1,
+            "pilates": 1,
+            "cycling": 1
+          }
+        },
+        "medium": {
+          "label": "Mediu",
+          "bias": {
+            "fitness": 3,
+            "cycling": 2,
+            "swimming": 2,
+            "tennis": 2,
+            "boxing": 2,
+            "martial_arts": 2,
+            "badminton": 2,
+            "table_tennis": 3,
+            "basketball": 2,
+            "volleyball": 2,
+            "rowing": 1,
+            "climbing": 1
+          }
+        },
+        "high": {
+          "label": "Ridicat",
+          "bias": {
+            "swimming": 3,
+            "tennis": 4,
+            "cycling": 2,
+            "rowing": 3,
+            "climbing": 3,
+            "boxing": 2,
+            "martial_arts": 1,
+            "pilates": 3,
+            "badminton": 2,
+            "fitness": 1,
+            "yoga": 1
+          }
+        }
+      }
+    },
+    "intensityPreference": {
+      "label": "Intensitate dorita",
+      "options": {
+        "low": {
+          "label": "Redusa",
+          "bias": {
+            "yoga": 4,
+            "pilates": 4,
+            "hiking": 3,
+            "swimming": 3,
+            "fitness": 2,
+            "table_tennis": 2,
+            "rowing": 1,
+            "running": 1,
+            "cycling": 1
+          }
+        },
+        "medium": {
+          "label": "Moderata",
+          "bias": {
+            "cycling": 3,
+            "swimming": 2,
+            "tennis": 2,
+            "fitness": 2,
+            "volleyball": 2,
+            "badminton": 2,
+            "rowing": 2,
+            "table_tennis": 2,
+            "basketball": 2,
+            "hiking": 2
+          }
+        },
+        "high": {
+          "label": "Ridicata",
+          "bias": {
+            "running": 3,
+            "football": 3,
+            "basketball": 3,
+            "boxing": 4,
+            "martial_arts": 4,
+            "climbing": 3,
+            "badminton": 3,
+            "rowing": 2,
+            "tennis": 2,
+            "cycling": 2,
+            "volleyball": 2,
+            "swimming": 1
+          }
+        }
+      }
+    },
+    "competitiveness": {
+      "label": "Competitivitate dorita",
+      "options": {
+        "low": {
+          "label": "Relaxat",
+          "bias": {
+            "hiking": 4,
+            "yoga": 4,
+            "pilates": 4,
+            "swimming": 2,
+            "fitness": 2,
+            "cycling": 2,
+            "running": 1,
+            "table_tennis": 1
+          }
+        },
+        "medium": {
+          "label": "Echilibrat",
+          "bias": {
+            "fitness": 3,
+            "cycling": 2,
+            "running": 2,
+            "swimming": 2,
+            "tennis": 2,
+            "badminton": 2,
+            "table_tennis": 2,
+            "volleyball": 2,
+            "rowing": 2,
+            "martial_arts": 2,
+            "boxing": 1,
+            "basketball": 1,
+            "football": 1
+          }
+        },
+        "high": {
+          "label": "Competitiv",
+          "bias": {
+            "football": 4,
+            "basketball": 4,
+            "volleyball": 3,
+            "tennis": 3,
+            "badminton": 3,
+            "table_tennis": 3,
+            "boxing": 3,
+            "martial_arts": 3,
+            "climbing": 2,
+            "rowing": 2,
+            "running": 2,
+            "cycling": 2,
+            "swimming": 1
           }
         }
       }
