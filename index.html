@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistem expert - Alegerea sportului potrivit</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Sistem Expert pentru Alegerea Sportului Potrivit</h1>
+      <p>Completeaza formularul, iar motorul de scorare pe bias iti recomanda sporturile cele mai potrivite.</p>
+    </header>
+
+    <section class="card">
+      <form id="expertForm">
+        <div class="grid">
+          <label>
+            Nivel activitate fizica curent
+            <select name="activityLevel" required>
+              <option value="">Selecteaza</option>
+              <option value="sedentary">Sedentar</option>
+              <option value="moderate">Moderat</option>
+              <option value="active">Activ</option>
+            </select>
+          </label>
+
+          <label>
+            Nivel conditie fizica
+            <select name="fitnessLevel" required>
+              <option value="">Selecteaza</option>
+              <option value="beginner">Incepator</option>
+              <option value="intermediate">Intermediar</option>
+              <option value="advanced">Avansat</option>
+            </select>
+          </label>
+
+          <label>
+            Mediu preferat
+            <select name="environment" required>
+              <option value="">Selecteaza</option>
+              <option value="indoor">Indoor</option>
+              <option value="outdoor">Outdoor</option>
+            </select>
+          </label>
+
+          <label>
+            Timp disponibil pe saptamana
+            <select name="time" required>
+              <option value="">Selecteaza</option>
+              <option value="low">Scazut (1-2 ore)</option>
+              <option value="medium">Mediu (3-5 ore)</option>
+              <option value="high">Ridicat (6+ ore)</option>
+            </select>
+          </label>
+
+          <label>
+            Preferinta de practicare
+            <select name="style" required>
+              <option value="">Selecteaza</option>
+              <option value="individual">Individual</option>
+              <option value="team">Echipa</option>
+            </select>
+          </label>
+
+          <label>
+            Obiectiv principal
+            <select name="goal" required>
+              <option value="">Selecteaza</option>
+              <option value="weight_loss">Scadere in greutate</option>
+              <option value="endurance">Cresterea rezistentei</option>
+              <option value="general_health">Sanatate generala</option>
+              <option value="social">Socializare</option>
+              <option value="stress_relief">Reducerea stresului</option>
+            </select>
+          </label>
+
+          <label>
+            Probleme articulare
+            <select name="jointIssues" required>
+              <option value="">Selecteaza</option>
+              <option value="yes">Da</option>
+              <option value="no">Nu</option>
+            </select>
+          </label>
+
+          <label>
+            Coordonare motrica
+            <select name="coordination" required>
+              <option value="">Selecteaza</option>
+              <option value="low">Scazuta</option>
+              <option value="high">Ridicata</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Genereaza recomandare</button>
+          <button type="reset" id="resetBtn" class="secondary">Reseteaza</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card hidden" id="resultCard">
+      <h2>Recomandare</h2>
+      <p id="mainRecommendation"></p>
+      <p id="sportDescription" class="muted"></p>
+
+      <h3>Criterii aplicate (Bias Scoring)</h3>
+      <ul id="appliedBiasList"></ul>
+
+      <h3>Explicatia inferentei</h3>
+      <ul id="reasonList"></ul>
+
+      <h3>Top 5 sporturi recomandate (procent de potrivire)</h3>
+      <ol id="rankingList"></ol>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

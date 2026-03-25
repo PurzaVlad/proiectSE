@@ -1,0 +1,322 @@
+{
+  "approach": "bias_scoring",
+  "sports": {
+    "running": {
+      "label": "Alergare",
+      "description": "Sport accesibil, eficient pentru anduranta si scadere in greutate."
+    },
+    "swimming": {
+      "label": "Inot",
+      "description": "Sport complet, cu impact redus asupra articulatiilor."
+    },
+    "cycling": {
+      "label": "Ciclism",
+      "description": "Activitate outdoor eficienta pentru conditie fizica si controlul greutatii."
+    },
+    "football": {
+      "label": "Fotbal",
+      "description": "Sport de echipa dinamic, potrivit pentru socializare si efort intens."
+    },
+    "tennis": {
+      "label": "Tenis",
+      "description": "Sport individual ce combina coordonare, viteza si strategie."
+    },
+    "fitness": {
+      "label": "Fitness",
+      "description": "Antrenament flexibil indoor, usor de adaptat ritmului personal."
+    },
+    "hiking": {
+      "label": "Drumetii",
+      "description": "Activitate outdoor moderata, utila pentru sanatate generala si reducerea stresului."
+    }
+  },
+  "baseBias": {
+    "running": 1,
+    "swimming": 1,
+    "cycling": 1,
+    "football": 1,
+    "tennis": 1,
+    "fitness": 1,
+    "hiking": 1
+  },
+  "criteria": {
+    "activityLevel": {
+      "label": "Nivel activitate fizica",
+      "options": {
+        "sedentary": {
+          "label": "Sedentar",
+          "bias": {
+            "fitness": 3,
+            "swimming": 3,
+            "hiking": 2,
+            "running": 1,
+            "cycling": 1,
+            "tennis": 1
+          }
+        },
+        "moderate": {
+          "label": "Moderat",
+          "bias": {
+            "hiking": 3,
+            "fitness": 2,
+            "cycling": 2,
+            "swimming": 2,
+            "tennis": 2,
+            "running": 1,
+            "football": 1
+          }
+        },
+        "active": {
+          "label": "Activ",
+          "bias": {
+            "running": 3,
+            "football": 3,
+            "cycling": 3,
+            "tennis": 2,
+            "swimming": 2,
+            "fitness": 2,
+            "hiking": 1
+          }
+        }
+      }
+    },
+    "fitnessLevel": {
+      "label": "Nivel conditie fizica",
+      "options": {
+        "beginner": {
+          "label": "Incepator",
+          "bias": {
+            "fitness": 3,
+            "swimming": 2,
+            "hiking": 2,
+            "cycling": 1,
+            "running": 1
+          }
+        },
+        "intermediate": {
+          "label": "Intermediar",
+          "bias": {
+            "cycling": 3,
+            "running": 2,
+            "fitness": 2,
+            "tennis": 2,
+            "swimming": 2,
+            "football": 1,
+            "hiking": 1
+          }
+        },
+        "advanced": {
+          "label": "Avansat",
+          "bias": {
+            "running": 3,
+            "football": 3,
+            "tennis": 3,
+            "cycling": 2,
+            "swimming": 2,
+            "fitness": 1,
+            "hiking": 1
+          }
+        }
+      }
+    },
+    "environment": {
+      "label": "Mediu preferat",
+      "options": {
+        "indoor": {
+          "label": "Indoor",
+          "bias": {
+            "fitness": 3,
+            "swimming": 3,
+            "tennis": 1
+          }
+        },
+        "outdoor": {
+          "label": "Outdoor",
+          "bias": {
+            "running": 3,
+            "cycling": 3,
+            "football": 3,
+            "hiking": 3,
+            "tennis": 2
+          }
+        }
+      }
+    },
+    "time": {
+      "label": "Timp disponibil",
+      "options": {
+        "low": {
+          "label": "Scazut",
+          "bias": {
+            "fitness": 3,
+            "running": 2,
+            "swimming": 2,
+            "tennis": 1,
+            "hiking": 1
+          }
+        },
+        "medium": {
+          "label": "Mediu",
+          "bias": {
+            "hiking": 3,
+            "cycling": 2,
+            "tennis": 2,
+            "swimming": 2,
+            "fitness": 2,
+            "football": 1,
+            "running": 1
+          }
+        },
+        "high": {
+          "label": "Ridicat",
+          "bias": {
+            "running": 3,
+            "cycling": 3,
+            "football": 2,
+            "swimming": 2,
+            "tennis": 2,
+            "hiking": 2,
+            "fitness": 1
+          }
+        }
+      }
+    },
+    "style": {
+      "label": "Stil preferat",
+      "options": {
+        "individual": {
+          "label": "Individual",
+          "bias": {
+            "running": 2,
+            "swimming": 2,
+            "cycling": 2,
+            "tennis": 2,
+            "fitness": 2,
+            "hiking": 2
+          }
+        },
+        "team": {
+          "label": "Echipa",
+          "bias": {
+            "football": 4,
+            "tennis": 1,
+            "fitness": 1
+          }
+        }
+      }
+    },
+    "goal": {
+      "label": "Obiectiv principal",
+      "options": {
+        "weight_loss": {
+          "label": "Scadere in greutate",
+          "bias": {
+            "running": 3,
+            "cycling": 3,
+            "fitness": 3,
+            "swimming": 2,
+            "hiking": 2,
+            "football": 1,
+            "tennis": 1
+          }
+        },
+        "endurance": {
+          "label": "Cresterea rezistentei",
+          "bias": {
+            "running": 3,
+            "cycling": 3,
+            "swimming": 2,
+            "football": 2,
+            "hiking": 2,
+            "tennis": 1,
+            "fitness": 1
+          }
+        },
+        "general_health": {
+          "label": "Sanatate generala",
+          "bias": {
+            "swimming": 3,
+            "hiking": 3,
+            "fitness": 2,
+            "cycling": 2,
+            "running": 1,
+            "tennis": 1,
+            "football": 1
+          }
+        },
+        "social": {
+          "label": "Socializare",
+          "bias": {
+            "football": 4,
+            "tennis": 2,
+            "hiking": 1,
+            "fitness": 1
+          }
+        },
+        "stress_relief": {
+          "label": "Reducerea stresului",
+          "bias": {
+            "hiking": 3,
+            "swimming": 2,
+            "running": 2,
+            "fitness": 2,
+            "cycling": 1,
+            "tennis": 1
+          }
+        }
+      }
+    },
+    "jointIssues": {
+      "label": "Probleme articulare",
+      "options": {
+        "yes": {
+          "label": "Da",
+          "bias": {
+            "swimming": 4,
+            "fitness": 2,
+            "hiking": 1
+          }
+        },
+        "no": {
+          "label": "Nu",
+          "bias": {
+            "running": 2,
+            "football": 2,
+            "tennis": 2,
+            "cycling": 2,
+            "fitness": 1,
+            "swimming": 1,
+            "hiking": 1
+          }
+        }
+      }
+    },
+    "coordination": {
+      "label": "Coordonare motrica",
+      "options": {
+        "low": {
+          "label": "Scazuta",
+          "bias": {
+            "fitness": 2,
+            "swimming": 2,
+            "hiking": 2,
+            "running": 1,
+            "cycling": 1
+          }
+        },
+        "high": {
+          "label": "Ridicata",
+          "bias": {
+            "tennis": 3,
+            "football": 2,
+            "cycling": 2,
+            "running": 2,
+            "swimming": 1,
+            "fitness": 1,
+            "hiking": 1
+          }
+        }
+      }
+    }
+  }
+}

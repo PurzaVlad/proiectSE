@@ -31,6 +31,14 @@ Varianta simpla:
 2. Deschide in browser:
    `http://localhost:8080`
 
+## Deploy pe Vercel
+1. Importa repository-ul in Vercel.
+2. La `Root Directory`, selecteaza folderul in care exista `index.html` (acest folder).
+3. Framework preset: `Other`.
+4. Redeploy.
+
+Proiectul include `vercel.json` pentru servire statica si route corect spre `index.html`.
+
 ## Exemple de sporturi recomandate
 - alergare
 - inot
