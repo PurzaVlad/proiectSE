@@ -287,16 +287,12 @@ button:disabled {
 }
 
 /* List Styles */
-.criteria-list,
-.reasons-list,
 .ranking-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.criteria-list li,
-.reasons-list li,
 .ranking-list li {
   padding: 0.8rem 1rem;
   margin-bottom: 0.75rem;
@@ -312,11 +308,66 @@ button:disabled {
   border-left-color: var(--secondary);
 }
 
-.criteria-list li:hover,
-.reasons-list li:hover,
 .ranking-list li:hover {
   background: rgba(99, 102, 241, 0.1);
   transform: translateX(4px);
+}
+
+/* Criteria Table */
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.criteria-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.criteria-table thead th {
+  position: sticky;
+  top: 0;
+  background: rgba(30, 41, 59, 0.95);
+  color: #c4b5fd;
+  font-weight: 700;
+}
+
+.criteria-table th,
+.criteria-table td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.7rem;
+  text-align: center;
+  font-size: 0.87rem;
+}
+
+.criteria-table tbody th {
+  text-align: left;
+  color: var(--text);
+  background: rgba(51, 65, 85, 0.3);
+  white-space: nowrap;
+}
+
+.criteria-table .delta-positive {
+  color: #34d399;
+  font-weight: 700;
+}
+
+.criteria-table .delta-negative {
+  color: #f87171;
+  font-weight: 700;
+}
+
+.criteria-table .delta-zero {
+  color: var(--text-secondary);
+}
+
+.criteria-table .total-row th,
+.criteria-table .total-row td {
+  background: rgba(236, 72, 153, 0.12);
+  font-weight: 700;
 }
 
 /* Utility Classes */

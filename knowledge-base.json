@@ -68,6 +68,18 @@
     "badminton": {
       "label": "Badminton",
       "description": "Sport dinamic, potrivit pentru agilitate, anduranta si coordonare."
+    },
+    "handball": {
+      "label": "Handbal",
+      "description": "Sport de echipa intens, excelent pentru viteza, putere si coordonare."
+    },
+    "dance": {
+      "label": "Dans",
+      "description": "Activitate versatila pentru conditie fizica, ritm si reducerea stresului."
+    },
+    "skating": {
+      "label": "Patinaj",
+      "description": "Sport dinamic pentru echilibru, coordonare si anduranta."
     }
   },
   "baseBias": {
@@ -87,7 +99,10 @@
     "rowing": 1,
     "climbing": 1,
     "table_tennis": 1,
-    "badminton": 1
+    "badminton": 1,
+    "handball": 1,
+    "dance": 1,
+    "skating": 1
   },
   "criteria": {
     "activityLevel": {
@@ -103,11 +118,14 @@
             "pilates": 3,
             "table_tennis": 2,
             "volleyball": 1,
+            "dance": 2,
+            "skating": 1,
             "running": 1,
             "cycling": 1,
             "tennis": 1,
             "badminton": 1,
-            "rowing": 1
+            "rowing": 1,
+            "handball": 1
           }
         },
         "moderate": {
@@ -122,11 +140,14 @@
             "table_tennis": 2,
             "badminton": 2,
             "rowing": 2,
+            "dance": 2,
+            "skating": 2,
             "yoga": 2,
             "pilates": 2,
             "running": 1,
             "football": 1,
             "basketball": 1,
+            "handball": 1,
             "boxing": 1,
             "martial_arts": 1,
             "climbing": 1
@@ -144,9 +165,12 @@
             "climbing": 3,
             "rowing": 3,
             "badminton": 3,
+            "handball": 3,
+            "skating": 3,
             "tennis": 2,
             "swimming": 2,
             "fitness": 2,
+            "dance": 2,
             "hiking": 1,
             "volleyball": 2,
             "table_tennis": 2
@@ -165,11 +189,13 @@
             "hiking": 2,
             "yoga": 3,
             "pilates": 3,
+            "dance": 2,
             "table_tennis": 2,
             "volleyball": 1,
             "cycling": 1,
             "running": 1,
-            "badminton": 1
+            "badminton": 1,
+            "skating": 1
           }
         },
         "intermediate": {
@@ -185,6 +211,9 @@
             "rowing": 2,
             "badminton": 2,
             "table_tennis": 2,
+            "handball": 2,
+            "dance": 2,
+            "skating": 2,
             "martial_arts": 2,
             "boxing": 2,
             "yoga": 2,
@@ -208,8 +237,11 @@
             "swimming": 2,
             "rowing": 2,
             "badminton": 2,
+            "handball": 3,
+            "skating": 3,
             "volleyball": 2,
             "table_tennis": 2,
+            "dance": 2,
             "fitness": 1,
             "hiking": 1,
             "yoga": 1,
@@ -230,8 +262,10 @@
             "yoga": 3,
             "pilates": 3,
             "table_tennis": 3,
+            "dance": 3,
             "boxing": 2,
             "martial_arts": 2,
+            "handball": 2,
             "volleyball": 2,
             "badminton": 2,
             "climbing": 1
@@ -246,10 +280,12 @@
             "hiking": 3,
             "tennis": 2,
             "basketball": 3,
+            "handball": 2,
             "rowing": 3,
             "climbing": 3,
             "badminton": 2,
-            "volleyball": 2
+            "volleyball": 2,
+            "skating": 3
           }
         }
       }
@@ -265,12 +301,14 @@
             "swimming": 2,
             "yoga": 3,
             "pilates": 3,
+            "dance": 2,
             "table_tennis": 2,
             "boxing": 2,
             "martial_arts": 2,
             "tennis": 1,
             "hiking": 1,
-            "badminton": 1
+            "badminton": 1,
+            "skating": 1
           }
         },
         "medium": {
@@ -283,11 +321,14 @@
             "fitness": 2,
             "basketball": 2,
             "volleyball": 2,
+            "handball": 2,
             "rowing": 2,
             "badminton": 2,
             "table_tennis": 2,
             "yoga": 2,
             "pilates": 2,
+            "dance": 2,
+            "skating": 2,
             "boxing": 2,
             "martial_arts": 2,
             "football": 1,
@@ -310,8 +351,11 @@
             "climbing": 3,
             "rowing": 3,
             "badminton": 3,
+            "handball": 3,
+            "skating": 3,
             "volleyball": 2,
             "table_tennis": 2,
+            "dance": 2,
             "fitness": 1
           }
         }
@@ -331,12 +375,14 @@
             "hiking": 2,
             "yoga": 3,
             "pilates": 3,
+            "dance": 2,
             "boxing": 2,
             "martial_arts": 2,
             "rowing": 2,
             "climbing": 2,
             "table_tennis": 2,
-            "badminton": 2
+            "badminton": 2,
+            "skating": 2
           }
         },
         "team": {
@@ -345,8 +391,10 @@
             "football": 4,
             "basketball": 4,
             "volleyball": 4,
+            "handball": 4,
             "tennis": 1,
             "fitness": 1,
+            "dance": 1,
             "rowing": 2,
             "badminton": 2,
             "table_tennis": 1
@@ -368,8 +416,11 @@
             "boxing": 3,
             "rowing": 3,
             "basketball": 2,
+            "handball": 2,
             "badminton": 2,
+            "skating": 2,
             "yoga": 2,
+            "dance": 2,
             "pilates": 2,
             "football": 1,
             "tennis": 1,
@@ -390,7 +441,10 @@
             "rowing": 3,
             "boxing": 2,
             "basketball": 2,
+            "handball": 2,
+            "skating": 2,
             "badminton": 2,
+            "dance": 1,
             "martial_arts": 2,
             "tennis": 1,
             "fitness": 1,
@@ -410,6 +464,8 @@
             "cycling": 2,
             "yoga": 3,
             "pilates": 3,
+            "dance": 3,
+            "skating": 2,
             "rowing": 2,
             "table_tennis": 2,
             "badminton": 2,
@@ -429,9 +485,12 @@
             "football": 4,
             "basketball": 4,
             "volleyball": 4,
+            "handball": 4,
             "tennis": 2,
             "badminton": 2,
             "table_tennis": 2,
+            "dance": 2,
+            "skating": 1,
             "hiking": 1,
             "fitness": 1,
             "rowing": 2
@@ -446,6 +505,8 @@
             "fitness": 2,
             "yoga": 3,
             "pilates": 3,
+            "dance": 3,
+            "skating": 2,
             "table_tennis": 2,
             "badminton": 2,
             "climbing": 2,
@@ -455,7 +516,8 @@
             "boxing": 1,
             "martial_arts": 1,
             "volleyball": 1,
-            "basketball": 1
+            "basketball": 1,
+            "handball": 1
           }
         }
       }
@@ -471,14 +533,17 @@
             "hiking": 1,
             "yoga": 4,
             "pilates": 4,
+            "dance": 2,
             "rowing": 2,
             "table_tennis": 1,
             "running": -2,
             "football": -3,
             "basketball": -2,
+            "handball": -2,
             "volleyball": -1,
             "tennis": -1,
             "badminton": -1,
+            "skating": -2,
             "boxing": -3,
             "martial_arts": -3,
             "climbing": -2
@@ -495,15 +560,18 @@
             "swimming": 1,
             "hiking": 1,
             "basketball": 2,
+            "handball": 2,
             "volleyball": 2,
             "boxing": 2,
             "martial_arts": 2,
             "climbing": 2,
             "badminton": 2,
+            "skating": 2,
             "rowing": 1,
             "table_tennis": 1,
             "yoga": 1,
-            "pilates": 1
+            "pilates": 1,
+            "dance": 1
           }
         }
       }
@@ -519,6 +587,7 @@
             "hiking": 2,
             "yoga": 3,
             "pilates": 3,
+            "dance": 1,
             "rowing": 2,
             "running": 1,
             "cycling": 1,
@@ -538,11 +607,14 @@
             "basketball": 3,
             "table_tennis": 3,
             "badminton": 3,
+            "handball": 3,
+            "skating": 3,
             "boxing": 3,
             "martial_arts": 3,
             "climbing": 3,
             "volleyball": 2,
             "rowing": 2,
+            "dance": 2,
             "yoga": 1,
             "pilates": 1
           }
@@ -560,7 +632,10 @@
             "hiking": 3,
             "fitness": 2,
             "yoga": 2,
+            "dance": 3,
+            "skating": 2,
             "basketball": 2,
+            "handball": 2,
             "volleyball": 2,
             "table_tennis": 3,
             "badminton": 2,
@@ -581,6 +656,9 @@
             "badminton": 2,
             "table_tennis": 3,
             "basketball": 2,
+            "handball": 2,
+            "dance": 2,
+            "skating": 2,
             "volleyball": 2,
             "rowing": 1,
             "climbing": 1
@@ -597,6 +675,9 @@
             "boxing": 2,
             "martial_arts": 1,
             "pilates": 3,
+            "dance": 3,
+            "skating": 3,
+            "handball": 2,
             "badminton": 2,
             "fitness": 1,
             "yoga": 1
@@ -616,6 +697,8 @@
             "swimming": 3,
             "fitness": 2,
             "table_tennis": 2,
+            "dance": 2,
+            "skating": 1,
             "rowing": 1,
             "running": 1,
             "cycling": 1
@@ -630,6 +713,9 @@
             "fitness": 2,
             "volleyball": 2,
             "badminton": 2,
+            "handball": 2,
+            "dance": 3,
+            "skating": 2,
             "rowing": 2,
             "table_tennis": 2,
             "basketball": 2,
@@ -642,14 +728,17 @@
             "running": 3,
             "football": 3,
             "basketball": 3,
+            "handball": 4,
             "boxing": 4,
             "martial_arts": 4,
             "climbing": 3,
+            "skating": 4,
             "badminton": 3,
             "rowing": 2,
             "tennis": 2,
             "cycling": 2,
             "volleyball": 2,
+            "dance": 2,
             "swimming": 1
           }
         }
@@ -664,6 +753,8 @@
             "hiking": 4,
             "yoga": 4,
             "pilates": 4,
+            "dance": 3,
+            "skating": 1,
             "swimming": 2,
             "fitness": 2,
             "cycling": 2,
@@ -680,6 +771,9 @@
             "swimming": 2,
             "tennis": 2,
             "badminton": 2,
+            "handball": 2,
+            "dance": 2,
+            "skating": 2,
             "table_tennis": 2,
             "volleyball": 2,
             "rowing": 2,
@@ -694,12 +788,15 @@
           "bias": {
             "football": 4,
             "basketball": 4,
+            "handball": 4,
             "volleyball": 3,
             "tennis": 3,
             "badminton": 3,
             "table_tennis": 3,
             "boxing": 3,
             "martial_arts": 3,
+            "skating": 3,
+            "dance": 2,
             "climbing": 2,
             "rowing": 2,
             "running": 2,

@@ -2,9 +2,9 @@ const form = document.getElementById("expertForm");
 const resultCard = document.getElementById("resultCard");
 const mainRecommendation = document.getElementById("mainRecommendation");
 const sportDescription = document.getElementById("sportDescription");
-const reasonList = document.getElementById("reasonList");
 const rankingList = document.getElementById("rankingList");
-const appliedBiasList = document.getElementById("appliedBiasList");
+const appliedBiasTableHead = document.getElementById("appliedBiasTableHead");
+const appliedBiasTableBody = document.getElementById("appliedBiasTableBody");
 const resetBtn = document.getElementById("resetBtn");
 
 let knowledgeBase = null;
@@ -49,31 +49,40 @@ function initializeScores(sportsMeta, baseBias = {}) {
   }, {});
 }
 
-function computeMaxScores(criteria, sportsMeta, baseBias = {}) {
-  const maxScores = initializeScores(sportsMeta, baseBias);
+function computeGlobalScoreRange(facts, kb) {
+  const sportKeys = Object.keys(kb.sports || {});
+  const baseValues = sportKeys.map((sportKey) => kb.baseBias?.[sportKey] || 0);
 
-  for (const criterion of Object.values(criteria)) {
-    for (const sportKey of Object.keys(sportsMeta)) {
-      let bestForCriterion = 0;
+  const minBase = baseValues.length > 0 ? Math.min(...baseValues) : 0;
+  const maxBase = baseValues.length > 0 ? Math.max(...baseValues) : 0;
 
-      for (const option of Object.values(criterion.options || {})) {
-        const candidate = option.bias?.[sportKey] || 0;
-        if (candidate > bestForCriterion) {
-          bestForCriterion = candidate;
-        }
-      }
+  let minDeltaSum = 0;
+  let maxDeltaSum = 0;
 
-      maxScores[sportKey] += bestForCriterion;
+  for (const [factKey, factValue] of Object.entries(facts)) {
+    const option = kb.criteria?.[factKey]?.options?.[factValue];
+    if (!option) {
+      continue;
     }
+
+    const deltas = sportKeys.map((sportKey) => option.bias?.[sportKey] || 0);
+    if (deltas.length === 0) {
+      continue;
+    }
+
+    minDeltaSum += Math.min(...deltas);
+    maxDeltaSum += Math.max(...deltas);
   }
 
-  return maxScores;
+  return {
+    minScore: minBase + minDeltaSum,
+    maxScore: maxBase + maxDeltaSum
+  };
 }
 
 function scoreWithBias(facts, kb) {
   const scores = initializeScores(kb.sports, kb.baseBias);
-  const explanations = [];
-  const appliedCriteria = [];
+  const criteriaRows = [];
 
   for (const [factKey, factValue] of Object.entries(facts)) {
     const criterion = kb.criteria?.[factKey];
@@ -91,40 +100,35 @@ function scoreWithBias(facts, kb) {
       continue;
     }
 
-    const topImpacts = biasEntries
-      .filter(([, delta]) => delta > 0)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 3)
-      .map(([sportKey, delta]) => `${kb.sports[sportKey].label} +${delta}`)
-      .join(", ");
-
-    if (topImpacts) {
-      appliedCriteria.push(`${criterion.label}: ${option.label} -> ${topImpacts}`);
-    }
+    criteriaRows.push({
+      criterionLabel: criterion.label,
+      optionLabel: option.label,
+      biases: option.bias || {}
+    });
 
     for (const [sportKey, delta] of biasEntries) {
       scores[sportKey] = (scores[sportKey] || 0) + delta;
-      explanations.push({
-        sport: sportKey,
-        reason: `${criterion.label}: ${option.label}`,
-        delta
-      });
     }
   }
 
-  return { scores, explanations, appliedCriteria };
+  return { scores, criteriaRows };
 }
 
-function buildTopRecommendations(scores, maxScores, sportsMeta, limit = 5) {
+function buildTopRecommendations(scores, scoreRange, sportsMeta, limit = 5) {
+  const minScore = scoreRange.minScore ?? 0;
+  const maxScore = scoreRange.maxScore ?? 1;
+  const span = Math.max(1, maxScore - minScore);
+
   return Object.keys(sportsMeta)
     .map((sportKey) => {
       const score = scores[sportKey] || 0;
-      const maxScore = maxScores[sportKey] || 1;
-      const percentage = Math.min(100, (score / maxScore) * 100);
+      const rawPercentage = ((score - minScore) / span) * 100;
+      const percentage = Math.min(100, Math.max(0, rawPercentage));
 
       return {
         sport: sportKey,
         score,
+        minScore,
         maxScore,
         percentage
       };
@@ -138,16 +142,91 @@ function buildTopRecommendations(scores, maxScores, sportsMeta, limit = 5) {
     .slice(0, limit);
 }
 
-function renderResult(topRecommendations, explanations, appliedCriteria, sportsMeta) {
-  reasonList.innerHTML = "";
-  rankingList.innerHTML = "";
-  appliedBiasList.innerHTML = "";
+function getTopSportsByTotalScore(scores, sportsMeta, limit = 10) {
+  return Object.keys(sportsMeta)
+    .map((sportKey) => ({
+      sport: sportKey,
+      score: scores[sportKey] || 0
+    }))
+    .sort((a, b) => {
+      if (b.score !== a.score) {
+        return b.score - a.score;
+      }
+      return sportsMeta[a.sport].label.localeCompare(sportsMeta[b.sport].label, "ro");
+    })
+    .slice(0, limit);
+}
 
-  appliedCriteria.forEach((line) => {
-    const li = document.createElement("li");
-    li.textContent = line;
-    appliedBiasList.appendChild(li);
+function formatDelta(delta) {
+  if (delta > 0) {
+    return `+${delta}`;
+  }
+  return `${delta}`;
+}
+
+function renderCriteriaTable(topSports, criteriaRows, scores, sportsMeta) {
+  appliedBiasTableHead.innerHTML = "";
+  appliedBiasTableBody.innerHTML = "";
+
+  if (topSports.length === 0) {
+    return;
+  }
+
+  const headerRow = document.createElement("tr");
+  const criterionHeader = document.createElement("th");
+  criterionHeader.textContent = "Criteriu";
+  headerRow.appendChild(criterionHeader);
+
+  topSports.forEach(({ sport }) => {
+    const th = document.createElement("th");
+    th.textContent = sportsMeta[sport].label;
+    headerRow.appendChild(th);
   });
+
+  appliedBiasTableHead.appendChild(headerRow);
+
+  criteriaRows.forEach((row) => {
+    const tr = document.createElement("tr");
+    const rowLabel = document.createElement("th");
+    rowLabel.textContent = `${row.criterionLabel} (${row.optionLabel})`;
+    tr.appendChild(rowLabel);
+
+    topSports.forEach(({ sport }) => {
+      const td = document.createElement("td");
+      const delta = row.biases[sport] ?? 0;
+      td.textContent = formatDelta(delta);
+      if (delta > 0) {
+        td.className = "delta-positive";
+      } else if (delta < 0) {
+        td.className = "delta-negative";
+      } else {
+        td.className = "delta-zero";
+      }
+      tr.appendChild(td);
+    });
+
+    appliedBiasTableBody.appendChild(tr);
+  });
+
+  const totalRow = document.createElement("tr");
+  totalRow.className = "total-row";
+  const totalLabel = document.createElement("th");
+  totalLabel.textContent = "Total";
+  totalRow.appendChild(totalLabel);
+
+  topSports.forEach(({ sport }) => {
+    const td = document.createElement("td");
+    td.textContent = `${scores[sport] || 0}`;
+    totalRow.appendChild(td);
+  });
+
+  appliedBiasTableBody.appendChild(totalRow);
+}
+
+function renderResult(topRecommendations, criteriaRows, scores, sportsMeta) {
+  rankingList.innerHTML = "";
+  appliedBiasTableHead.innerHTML = "";
+  appliedBiasTableBody.innerHTML = "";
 
   if (topRecommendations.length === 0) {
     mainRecommendation.textContent = "Nu exista recomandari disponibile.";
@@ -162,20 +241,14 @@ function renderResult(topRecommendations, explanations, appliedCriteria, sportsM
   mainRecommendation.textContent = `Top recomandare: ${topMeta.label} (${top.percentage.toFixed(1)}% potrivire)`;
   sportDescription.textContent = topMeta.description;
 
-  explanations
-    .filter((item) => item.sport === top.sport)
-    .sort((a, b) => b.delta - a.delta)
-    .forEach((item) => {
-      const li = document.createElement("li");
-      li.textContent = `${item.reason} (+${item.delta})`;
-      reasonList.appendChild(li);
-    });
-
   topRecommendations.forEach(({ sport, score, maxScore, percentage }) => {
     const li = document.createElement("li");
     li.textContent = `${sportsMeta[sport].label} - ${percentage.toFixed(1)}% (scor ${score}/${maxScore})`;
     rankingList.appendChild(li);
   });
+
+  const topSportsForTable = getTopSportsByTotalScore(scores, sportsMeta, 10);
+  renderCriteriaTable(topSportsForTable, criteriaRows, scores, sportsMeta);
 
   resultCard.classList.remove("hidden");
 }
@@ -195,18 +268,18 @@ form.addEventListener("submit", (event) => {
 
   const formData = new FormData(form);
   const facts = collectFacts(formData);
-  const { scores, explanations, appliedCriteria } = scoreWithBias(facts, knowledgeBase);
-  const maxScores = computeMaxScores(knowledgeBase.criteria || {}, knowledgeBase.sports, knowledgeBase.baseBias || {});
-  const topRecommendations = buildTopRecommendations(scores, maxScores, knowledgeBase.sports, 5);
+  const { scores, criteriaRows } = scoreWithBias(facts, knowledgeBase);
+  const scoreRange = computeGlobalScoreRange(facts, knowledgeBase);
+  const topRecommendations = buildTopRecommendations(scores, scoreRange, knowledgeBase.sports, 5);
 
-  renderResult(topRecommendations, explanations, appliedCriteria, knowledgeBase.sports);
+  renderResult(topRecommendations, criteriaRows, scores, knowledgeBase.sports);
 });
 
 resetBtn.addEventListener("click", () => {
   resultCard.classList.add("hidden");
-  reasonList.innerHTML = "";
   rankingList.innerHTML = "";
-  appliedBiasList.innerHTML = "";
+  appliedBiasTableHead.innerHTML = "";
+  appliedBiasTableBody.innerHTML = "";
   mainRecommendation.textContent = "";
   sportDescription.textContent = "";
 });
